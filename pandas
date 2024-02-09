@@ -1,0 +1,77 @@
+
+print(''' CREATION OF ARRAY USING PANDAS ''')
+
+import pandas as pd
+s1= pd.Series([10,20,30,40,50])
+print(s1)
+
+print(''' CUSTOMISED INDEX & DEFAULT INDEX ACCESSING ''')
+cindex= pd.Series([10,20,30,40,50], index=['a','b','c','d','e'])
+'''customised index'''
+print(cindex['a'])  
+'''default index''' 
+print(cindex[3])
+
+
+s1= pd.Series([10,20,30,40,50])
+s2=s1+5
+print(s2)
+
+print(''' FILTERING ''')
+s1= pd.Series([10,20,30,40,50])
+s3=s1[s1>2]
+print(s3)
+
+
+print(''' WORKING WITH SERIES IN PANDAS ALONG WITH NUMPY ''')
+import numpy as np
+index=np.array(['a','b','c','d','e'])
+a=np.array([10,20,30,40,50])
+b=pd.Series(a,index=index)
+print(b)
+
+print('''FINDING THE NO OF ELEMENT IN A SERIES''')
+s1= pd.Series([10,20,30,40,50])
+print("Series is  :",s1)
+print("size of the series is :",s1.size)
+
+
+print(" FIND THE AVERAGE OF ELEMENTS IN A SERIES ")
+s1= pd.Series([10,20,30,40,50])
+mean=s1.mean()
+print("Mean of the series: ",mean)
+
+print(" FIND THE MAXIMUM OF ELEMENTS IN A SERIES ")
+s1= pd.Series([10,20,30,40,50])
+maximum=s1.max()
+print("maximum of the series: ",maximum)
+
+
+print(" FIND THE MINIMUM  OF ELEMENTS IN A SERIES ")
+s1= pd.Series([10,20,30,40,50])
+minimum=s1.min()
+print("minimum of the series: ",minimum)
+
+
+print("  SORTING A SERIES  ")
+s1= pd.Series([10,50,30,90,40])
+print("ORIGINAL SERIES  IS   :",s1)
+sort=s1.sort_values()
+print("SORTED SERIES IS :",sort)
+
+print(''' SORTING OF INDEX ''')
+indexsort= pd.Series([10,20,30,40,50],index=[2,1,5,3,4]) 
+print("sorted index :",indexsort.sort_index())
+
+print(''' DISPLAYING UNIQUE FUNCTION''')
+s1= pd.Series([50,30,10,50,30,90,40,90,99,7])
+unique=s1.unique()
+print("unique elements :", unique)
+'''TO FIND NO.OF UNIQUE ELEMENTS (nunique)'''
+noofunique=s1.nunique()
+print("no of unique",noofunique)
+
+print("    SUMMARY OF THE SERIES    ")
+s1= pd.Series([10,20,30,40,50])
+summary=s1.describe()
+print("summary of the series  :",summary)
